@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>VoiceTube-FrontEnd</title>
+
+    <meta name="description" content="VoiceTube">
+    <meta name="keywords" content="VoiceTube,FrontEnd">
+    <meta name="author" content="Sandy_Luo">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+    <!-- Materialicons -->
+    <link rel="stylesheet" href="assets/bower_components/iconfont/material-icons.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!-- jQuery -->
+    <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+      <div class="video-page">
+        <div class="container">
+          <div class="video-header">
+            <div class="option-area">
+              <h4>排序</h4>
+              <ul>
+                <li><a href="#" class="sort-btn active" data-value="0">
+                  發佈時間 <i class="material-icons">sort</i></a></li>
+                <li><a href="#" class="sort-btn" data-value="1">
+                  觀看時間 <i class="material-icons">sort</i></a></li>
+                <li><a href="#" class="sort-btn" data-value="2">
+                  收藏次數 <i class="material-icons">sort</i></a></li>
+              </ul>
+            </div> 
+            <div class="option-area">
+              <h4>長度</h4>
+              <ul>
+                <li><a href="#" class="len-btn active" data-value="0">不限</a></li>
+                <li><a href="#" class="len-btn" data-value="1">4分鐘以下</a></li>
+                <li><a href="#" class="len-btn" data-value="2">5-10分鐘</a></li>
+                <li><a href="#" class="len-btn" data-value="3">超過10分鐘</a></li>
+              </ul>
+            </div> 
+          </div>
+          <div class="video-body">
+            <div class="video-list">
+              <div class="issue-block" v-if="video.length == 0">
+                <div class="no-result">
+                  <i class="material-icons">error</i>
+                  <p>沒有篩選結果</p>
+                </div>
+              </div>
+              <div class="video-item" v-for="(id,video) in video">
+                <div class="video-card">
+                  <div class="top">
+                    <div class="img-box"  v-bind:style="{ backgroundImage: 'url(' + video.thumbnail + ')' }"></div>
+                    <div class="info-box">
+                      <p>
+                        <span><i class="material-icons">access_time</i>{{video.publish | DateFormat}}</span>
+                        <span class="pull-right"><i class="material-icons">star</i>{{video.collectCount}}</p></span>
+                    </div> 
+                    <div class="time">{{ video.duration | TimeFormat }}</div>
+                  </div>
+                  <div class="bottom">
+                    <h5 title="{{video.title}}">{{video.title}}</h5>
+                    <p><i class="material-icons">headset</i>{{video.views}}</p>
+                    <div class="badge-area">
+                      <span class="badges badge-default" v-for="item in video.captions" >
+                      {{ item | LanFormat }}</span>
+                      <span class="badges badge-info">{{ video.level | LevelFormat }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/custom-vue.js"></script>
+    <script src="assets/bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    
+</body>
+
+</html>

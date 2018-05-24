@@ -1,0 +1,250 @@
+@charset "UTF-8";
+* {
+  font-family: "Noto Sans", 微軟正黑體, sans-serif; }
+
+body {
+  font-size: 14px; }
+
+a:hover, a:focus {
+  text-decoration: none; }
+
+.video-page {
+  padding: 90px 0; }
+
+.video-header {
+  border-bottom: 1px solid #aaa;
+  padding: 8px 24px; }
+
+.option-area {
+  display: inline-block;
+  margin-right: 36px; }
+  .option-area h4, .option-area ul, .option-area li {
+    display: inline-block;
+    vertical-align: baseline; }
+  .option-area ul {
+    padding-left: 0;
+    margin-bottom: 0; }
+  .option-area h4 {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-right: 20px;
+    color: #787878;
+    font-weight: 400; }
+  .option-area li a {
+    font-size: 12px;
+    color: #787878;
+    padding: 3.5px 8px;
+    margin: 0 4px;
+    border-radius: 4px; }
+  .option-area li a.active, .option-area li a:hover {
+    background: #4283E4;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+  .option-area li a i {
+    vertical-align: text-top;
+    font-size: 17px;
+    line-height: 1; }
+  .option-area li a.desc i {
+    transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -moz-transform: scaleY(-1); }
+
+.video-body {
+  padding: 30px 8px; }
+  .video-body .video-list {
+    margin-left: -10px;
+    margin-right: -10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .video-body .video-list .no-result {
+      text-align: center;
+      color: #787878; }
+      .video-body .video-list .no-result i {
+        font-size: 8rem;
+        margin: 30px 0; }
+    .video-body .video-list .video-card {
+      display: inline-block;
+      text-align: left;
+      vertical-align: middle;
+      margin: 0px 10px 30px 10px;
+      width: 240px;
+      height: 240px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      cursor: pointer; }
+      .video-body .video-list .video-card:hover .img-box {
+        transform: scale(1.15);
+        -webkit-transform: scale(1.15);
+        -ms-transform: scale(1.15);
+        -o-transform: scale(1.15);
+        -moz-transform: scale(1.15); }
+      .video-body .video-list .video-card .top {
+        position: relative;
+        height: 135px;
+        overflow: hidden; }
+        .video-body .video-list .video-card .top .img-box {
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+          transition-duration: 0.3s; }
+        .video-body .video-list .video-card .top .time {
+          background: #000;
+          color: #fff;
+          border-radius: 2px;
+          -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          display: inline-block;
+          font-size: 12px;
+          position: absolute;
+          padding: 2px 4px;
+          right: 8px;
+          bottom: 8px;
+          letter-spacing: 1px; }
+        .video-body .video-list .video-card .top .info-box {
+          color: #fff;
+          background: rgba(0, 0, 0, 0.6);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          padding: 2px 8px;
+          top: -24px;
+          transition: top 0.1s;
+          -webkit-transition: top 0.1s;
+          letter-spacing: 1px; }
+          .video-body .video-list .video-card .top .info-box p {
+            margin-bottom: 0;
+            font-size: 12px; }
+            .video-body .video-list .video-card .top .info-box p i {
+              font-size: 14px;
+              vertical-align: middle;
+              margin-top: -1px;
+              margin-right: 3px; }
+      .video-body .video-list .video-card:hover .info-box {
+        top: 0px; }
+      .video-body .video-list .video-card .bottom {
+        padding: 8px;
+        position: relative;
+        height: 105px; }
+        .video-body .video-list .video-card .bottom h5 {
+          font-size: 14px;
+          font-weight: initial;
+          color: #212B36;
+          line-height: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          height: 2.5rem;
+          margin-bottom: 4px; }
+        .video-body .video-list .video-card .bottom p {
+          margin-bottom: 0;
+          color: #787878; }
+          .video-body .video-list .video-card .bottom p i {
+            font-size: 19px;
+            vertical-align: text-bottom;
+            margin-right: 5px; }
+        .video-body .video-list .video-card .bottom .badge-area {
+          position: absolute;
+          right: 8px;
+          bottom: 8px;
+          font-size: 0; }
+          .video-body .video-list .video-card .bottom .badge-area .badges {
+            padding: 2px 8px;
+            margin-left: 4px;
+            font-size: 12px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: baseline;
+            letter-spacing: -0.03px; }
+          .video-body .video-list .video-card .bottom .badge-area .badge-default {
+            background: #4283E4;
+            color: #fff;
+            border-radius: 2px;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+          .video-body .video-list .video-card .bottom .badge-area .badge-info {
+            background: #37C597;
+            color: #fff;
+            border-radius: 2px;
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s; }
+
+.container {
+  width: 1366px;
+  max-width: 100%; }
+  @media screen and (max-width: 1366px) {
+    .container {
+      width: 1200px;
+      max-width: 100%; } }
+  @media screen and (max-width: 1024px) {
+    .container {
+      width: 900px;
+      max-width: 100%; } }
+
+@media screen and (max-width: 768px) {
+  .option-area {
+    margin-bottom: 15px; } }
+
+@media screen and (max-width: 768px) {
+  .video-page {
+    padding: 40px 0; } }
+
+@media screen and (max-width: 500px) {
+  .video-header {
+    padding: 8px 0px; } }
+
+@media screen and (max-width: 500px) {
+  .option-area h4 {
+    display: block;
+    margin-bottom: 10px; } }
+
+.issue-block {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%; }
+
+.video-item {
+  text-align: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 25%;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%; }
+  @media screen and (max-width: 1024px) {
+    .video-item {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 33.333333%;
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%; } }
+  @media screen and (max-width: 768px) {
+    .video-item {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%; } }
+  @media screen and (max-width: 500px) {
+    .video-item {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%; } }
+
+/*# sourceMappingURL=custom.css.map */

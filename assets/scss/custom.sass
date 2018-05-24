@@ -1,0 +1,299 @@
+$initial-text: 14px
+$small-text: 12px
+$color-black: #212B36
+$color-gray: #787878
+$color-light-gray: #D8D8D8
+$color-blue: #4283E4
+$color-green: #37C597
+
+
+@mixin ab_center
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+@mixin inline-block
+  display: inline-block
+
+@mixin btn($bgc,$color,$radius)
+  background: $bgc
+  color: $color
+  border-radius: $radius
+  -webkit-transition-duration: 0.3s
+  transition-duration: 0.3s
+
+@mixin text-line($line)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: $line
+  -webkit-box-orient: vertical
+  
+
+*
+  font-family: 'Noto Sans', 微軟正黑體 ,sans-serif
+
+body
+  font-size: $initial-text
+
+a:hover,a:focus
+  text-decoration: none
+
+.video-page
+  padding: 90px 0
+
+.video-header
+  border-bottom: 1px solid #aaa
+  padding: 8px 24px
+
+.option-area
+  +inline-block
+  margin-right: 36px
+
+  h4,ul,li
+    +inline-block
+    vertical-align: baseline
+
+  ul
+    padding-left: 0
+    margin-bottom: 0
+
+  h4
+    font-size: $initial-text
+    margin-bottom: 0
+    margin-right: 20px
+    color: $color-gray
+    font-weight: 400
+
+  li a
+    font-size: $small-text
+    color: $color-gray
+    padding: 3.5px 8px
+    margin: 0 4px
+    border-radius: 4px
+
+  li a.active,li a:hover
+    +btn($color-blue,#fff,4px)
+  li a i
+    vertical-align: text-top
+    font-size: 17px
+    line-height: 1
+  li a.desc i
+    transform: scaleY(-1)
+    -ms-transform: scaleY(-1)
+    -webkit-transform: scaleY(-1)
+    -o-transform: scaleY(-1)
+    -moz-transform: scaleY(-1)
+
+.video-body
+  padding: 30px 8px
+
+  .video-list
+    margin-left: -10px
+    margin-right: -10px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+
+    .no-result
+      text-align: center
+      color: $color-gray
+      i
+        font-size: 8rem
+        margin: 30px 0
+    
+    .video-card
+      +inline-block
+      text-align: left
+      vertical-align: middle
+      margin: 0px 10px 30px 10px 
+      width: 240px
+      height: 240px
+      border-radius: 4px
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.30)
+      overflow: hidden
+      cursor: pointer
+      
+
+      &:hover .img-box
+        transform: scale(1.15)
+        -webkit-transform: scale(1.15)
+        -ms-transform: scale(1.15)
+        -o-transform: scale(1.15)
+        -moz-transform: scale(1.15)
+
+      .top
+        position: relative
+        height: 135px
+        overflow: hidden
+        .img-box
+          height: 100%
+          width: 100%
+          background-size: cover
+          background-position: center 
+          transition-duration: 0.3s
+        .time
+          +btn(#000,#fff,2px)
+          +inline-block
+          font-size: $small-text
+          position: absolute
+          padding: 2px 4px
+          right: 8px
+          bottom: 8px
+          letter-spacing: 1px
+        .info-box
+          color: #fff
+          background: rgba(0, 0, 0, 0.6)
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          padding: 2px 8px
+          top: -24px
+          transition: top 0.1s
+          -webkit-transition: top 0.1s
+          letter-spacing: 1px
+          p
+            margin-bottom: 0
+            font-size: $small-text
+            i
+              font-size: $initial-text
+              vertical-align: middle
+              margin-top: -1px
+              margin-right: 3px
+      &:hover .info-box
+        top: 0px
+      .bottom
+        padding: 8px
+        position: relative
+        height: 105px
+
+        h5
+          font-size: $initial-text
+          font-weight: initial
+          color: $color-black
+          line-height: 20px
+          +text-line(2)
+          height: 2.5rem
+          margin-bottom: 4px
+        p
+          margin-bottom: 0
+          color: $color-gray
+          i
+            font-size: 19px
+            vertical-align: text-bottom
+            margin-right: 5px
+
+        .badge-area
+          position: absolute
+          right: 8px
+          bottom: 8px
+          font-size: 0
+          .badges
+            padding: 2px 8px
+            margin-left: 4px
+            font-size: $small-text
+            +inline-block
+            text-align: center
+            vertical-align: baseline
+            letter-spacing: -0.03px
+          & .badge-default
+            +btn($color-blue,#fff,2px)
+          & .badge-info
+            +btn($color-green,#fff,2px)
+
+
+// rwd ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+$bigscreenWidth: 1366px
+$pcWidth: 1024px
+$padWidth: 768px
+$phoneWidth: 500px
+
+@mixin bigscreen 
+  @media screen and (max-width: $bigscreenWidth) 
+      @content  
+
+@mixin pc 
+  @media screen and (max-width: $pcWidth) 
+      @content
+
+@mixin pad 
+  @media screen and (max-width: $padWidth) 
+      @content  
+
+@mixin phone 
+  @media screen and (max-width: $phoneWidth) 
+      @content
+    
+
+.container
+  width: 1366px
+  max-width: 100%
+
+  @include bigscreen 
+    width: 1200px
+    max-width: 100%
+  
+  @include pc
+    width: 900px
+    max-width: 100%
+
+.option-area
+  @include pad
+    margin-bottom: 15px
+.video-page
+  @include pad
+    padding: 40px 0
+.video-header
+  @include phone 
+    padding: 8px 0px
+.option-area h4
+  @include phone 
+    display: block
+    margin-bottom: 10px
+.issue-block
+  -webkit-box-flex: 0
+  -webkit-flex: 0 0 100%
+  -ms-flex: 0 0 100%
+  flex: 0 0 100%
+  max-width: 100%
+.video-item
+  text-align: center
+  -webkit-box-flex: 0
+  -webkit-flex: 0 0 25%
+  -ms-flex: 0 0 25%
+  flex: 0 0 25%
+  max-width: 25%
+  @include pc
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 33.333333%
+    -ms-flex: 0 0 33.333333%
+    flex: 0 0 33.333333%
+    max-width: 33.333333%
+  @include pad
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 50%
+    -ms-flex: 0 0 50%
+    flex: 0 0 50%
+    max-width: 50%
+  @include phone
+    -webkit-box-flex: 0
+    -webkit-flex: 0 0 100%
+    -ms-flex: 0 0 100%
+    flex: 0 0 100%
+    max-width: 100%
+    
+
+
+
+
+
+
+
+
+  
