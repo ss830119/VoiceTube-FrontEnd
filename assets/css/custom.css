@@ -68,6 +68,8 @@ a:hover, a:focus {
     .video-body .video-list .no-result {
       text-align: center;
       color: #787878; }
+      .video-body .video-list .no-result img {
+        width: 200px; }
       .video-body .video-list .no-result i {
         font-size: 8rem;
         margin: 30px 0; }

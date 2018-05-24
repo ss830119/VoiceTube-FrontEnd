@@ -57,7 +57,12 @@
           </div>
           <div class="video-body">
             <div class="video-list">
-              <div class="issue-block" v-if="video.length == 0">
+              <div class="issue-block" v-if="isfirst">
+                <div class="no-result">
+                  <img src="assets/images/loading.gif">
+                </div>
+              </div>
+              <div class="issue-block" v-if="video.length == 0 && isfirst == false ">
                 <div class="no-result">
                   <i class="material-icons">error</i>
                   <p>沒有篩選結果</p>

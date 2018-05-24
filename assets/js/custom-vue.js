@@ -1,7 +1,8 @@
 var vm = new Vue({
   el:"#app",
   data:{
-    video:[]
+    video:[],
+    isfirst:true,
   },
 
   ready:function(){
@@ -39,6 +40,8 @@ var vm = new Vue({
         contentType: 'application/json', 
         success: function(res){
           response = res.data;
+          vm.isfirst = false;
+
         }
       });
 
@@ -135,7 +138,9 @@ var vm = new Vue({
 })
 
 $(document).ready(function(){
+  
   vm.LoadData();
+  
 })
 
 
