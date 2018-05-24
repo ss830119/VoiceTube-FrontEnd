@@ -48,7 +48,7 @@ var vm = new Vue({
       //篩選條件
       switch (lenCond) {
         case 1:
-            response = $.grep(response,function(n){return n.duration < 240;});
+            response = $.grep(response,function(n){return n.duration < 300;});
             break;
         case 2:
             response = $.grep(response,function(n){return 300 <= n.duration && n.duration <= 600 });
